@@ -14,6 +14,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
     8. TImeline Week
     9. Timeline Work Week
     10. Timeline Month
+
+Topics Covered: 
 - Add REACT Scheduler
 - Change scheduler default date and view
 - Bind scheduler data using local JSON or remote service URL
