@@ -6,9 +6,28 @@ import {DataManager, WebApiAdaptor} from '@syncfusion/ej2-data';
 class App extends React.Component{
   private localData: EventSettingsModel ={
     dataSource: [{
-      EndTime: new Date(2019, 11, 25, 6, 30),
-      StartTime: new Date(2019, 11, 25, 4, 0) //YYYY, MM, DD, TIME: HOUR/MINUTES
-    }]
+      Id: 1,
+      End: new Date(2019, 11, 25, 6, 30),
+      Start: new Date(2019, 11, 25, 4, 0), //YYYY, MM, DD, TIME: HOUR/MINUTES
+      Summary: '',
+      IsAllDay: true,
+      RecurrenceRule: 'FREQ=DAILY;INTERVAL=1;COUNT=10',
+      IsReadonly: true,
+      IsBlock:true
+    },
+    {
+      Id: 2,
+      End: new Date(2019, 11, 28, 6, 30),
+      Start: new Date(2019, 11, 28, 4, 0), //YYYY, MM, DD, TIME: HOUR/MINUTES
+      Summary: '',
+      IsReadonly: true
+    }
+  ],
+    fields:{
+      subject: {name:'Summary', default: 'No title is provided.'},
+      startTime: {name: 'Start'},
+      endTime: {name: 'End'}
+    }
   }
 
   private remoteData = new DataManager({
@@ -19,7 +38,7 @@ class App extends React.Component{
 
   public render(){
     return (
-      <ScheduleComponent currentView='Month' selectedDate={new Date(2017, 5, 5)} eventSettings={{dataSource: this.remoteData}}>
+      <ScheduleComponent currentView='Month' selectedDate={new Date(2019, 11, 1)} eventSettings={this.localData}>
         <Inject services={[Day, Week, WorkWeek, Month, Agenda]}/>
       </ScheduleComponent>
     );
