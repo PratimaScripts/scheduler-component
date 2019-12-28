@@ -19,3 +19,13 @@ Topics Covered:
 - Add REACT Scheduler
 - Change scheduler default date and view
 - Bind scheduler data using local JSON or remote service URL
+- Advanced Event-Handling Options of React Scheduler
+    1. CRUD OPERATIONS:
+        1. Create
+        2. Read
+        3. Update
+        4. Delete
+    2. Bind additional fileds names
+    3. Block specific timeslot/time range
+    4. Read-Only events
+    5. Set default values for fields
